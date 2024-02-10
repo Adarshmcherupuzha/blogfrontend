@@ -28,7 +28,8 @@ const Login = () => {
             }
             else{
                 console.log(response.data.userdata._id)
-                // navigate("/addpost")
+                sessionStorage.setItem("userId",response.data.userdata._id)
+                 navigate("/addpost")
             }
             
             

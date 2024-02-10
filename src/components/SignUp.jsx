@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 
 const SignUp = () => {
@@ -19,6 +20,29 @@ const SignUp = () => {
     }
 
 
+    
+    const readvalues=()=>{
+        axios.post("http://localhost:3000/api/blog/signup",input).then(
+            (response)=>{console.log(response.data)
+            
+            if (response.data.status=="success") {
+               alert("Added") 
+               
+            } 
+            else{
+                alert("something went wrong")
+            }
+            
+            
+            }
+        )
+    }
+
+
+
+
+
+
 
 
   return (
@@ -28,7 +52,7 @@ const SignUp = () => {
                 <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                     <label htmlFor="" className="form-label">Name</label>
         
-                    <input type="text" className="form-control" />
+                    <input type="text" className="form-control" name="name" value={input.name} onChange={inputHandler} />
 
 
 
@@ -37,7 +61,7 @@ const SignUp = () => {
                 </div>
                 <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                 <label htmlFor="" className="form-label">Age</label>
-                <input type="text" className="form-control" />
+                <input type="text" className="form-control" name="age" value={input.age} onChange={inputHandler}/>
 
 
 
@@ -46,7 +70,7 @@ const SignUp = () => {
                 </div>
                 <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                 <label htmlFor="" className="form-label">Mobile</label> 
-                <input type="text" className="form-control" />
+                <input type="text" className="form-control" name="mobile" value={input.mobile} onChange={inputHandler}/>
 
 
 
@@ -55,7 +79,7 @@ const SignUp = () => {
                 </div>
                 <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                 <label htmlFor="" className="form-label">Address</label>
-                <input type="text" className="form-control" />
+                <input type="text" className="form-control" name="address" value={input.address} onChange={inputHandler} />
 
 
 
@@ -64,7 +88,7 @@ const SignUp = () => {
                 </div>
                 <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                 <label htmlFor="" className="form-label">PIN</label>
-                <input type="text" className="form-control" />
+                <input type="text" className="form-control" name="pin" value={input.pin} onChange={inputHandler} />
 
 
 
@@ -74,7 +98,7 @@ const SignUp = () => {
                 <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
         
                 <label htmlFor="" className="form-label">Email</label>
-                <input type="text" className="form-control" />
+                <input type="text" className="form-control" name="email" value={input.email} onChange={inputHandler}/>
 
 
 
@@ -82,7 +106,7 @@ const SignUp = () => {
                 </div>
                 <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                 <label htmlFor="" className="form-label">PassWord</label>
-                <input type="text" className="form-control" />
+                <input type="text" className="form-control" name="password" value={input.password} onChange={inputHandler}/>
 
 
 
@@ -91,7 +115,7 @@ const SignUp = () => {
                 </div>
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
         <br/>
-                <button className="btn btn-primary">Register</button>
+                <button className="btn btn-primary" onClick={readvalues}>Register</button>
 
 
 

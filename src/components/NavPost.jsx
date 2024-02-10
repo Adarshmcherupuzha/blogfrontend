@@ -18,7 +18,9 @@ const NavPost = () => {
         <li class="nav-item">
           <a class="nav-link" href="/viewpost">view post</a>
         </li>
-      
+        <li class="nav-item">
+          <a class="nav-link" href="/">Logout</a>
+        </li>
        
       </ul>
     </div>
