@@ -8,13 +8,13 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-      <Route>
-      <Routes path="/" element={<Login/>}/>
+      <Routes>
+      <Route path="/" element={<Login/>}/>
       
-      <Routes path="/signup" element={<SignUp/>}/>
+      <Route path="/signup" element={<SignUp/>}/>
       
       
-      </Route></BrowserRouter>
+      </Routes></BrowserRouter>
       
 
     </div>
