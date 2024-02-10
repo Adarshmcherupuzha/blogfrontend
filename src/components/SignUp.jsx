@@ -1,6 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const SignUp = () => {
+    const [input,setInput]=new useState(
+        {
+            name:"",
+        age:"",
+        mobile:"",
+        address:"",
+        pin:"",
+        email:"",
+        password:""
+        }
+
+    )
+    
+    const inputHandler=(event)=>{
+        setInput({...input,[event.target.name]:event.target.value})
+    }
+
+
+
+
   return (
     <div>
         <div className="container">
